@@ -1,22 +1,9 @@
-/** 
- * ----------------------------------------
- * 登录流程： 45 行
- * 开关媒体设备流程： 343 行
- * 音视频播放控制: 476 行
- * 处理设备列表: 605 行
- * ----------------------------------------
- */
-
 
 window.nim = null
 window.netcall = null
 window.WebRTC = window.WebRTC
 window.NIM = window.SDK.NIM
 NIM.use(WebRTC)
-
-
-$('#appkey').val('fe416640c8e8a72734219e1847ad2547')
-$('#token').val('e10adc3949ba59abbe56e057f20f883e')
 
 //临时变量
 let currentData = {
