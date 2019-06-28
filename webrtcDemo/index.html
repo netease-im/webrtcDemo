@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RTC(重构版本)测试页</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/jquery-ui.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/rtc-new.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <style>
+    .hide {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="rtc-container">
+    <div id="tabs">
+      <!--导航区-->
+      <ul role="tablist">
+        <li> <a href="#tabs-login">登录</a></li>
+        <li> <a href="#tabs-devices">开关音视频设备</a></li>
+        <li> <a href="#tabs-playwith">音视频播放控制</a></li>
+      </ul>
+
+      <div id="tabs-login">
+        <div class="part">
+          <div class="line">
+            appkey:<input type="text" id="appkey">
+          </div>
+          <div class="line">
+            token:<input type="text" id="token">
+          </div>
+          <div class="line">
+            账号:<input type="text" id="caller" value="">
+          </div>
+          <div class="line">
+            <button type="button" id="login-btn">登录</button>
+          </div>
+          <div class="line">
+              被叫账号: <input type="text" id="callee" value="">
+            </div>
+            <div class="line">
+              <button type="button" id="call-btn">呼叫</button>
+              <button type="button" id="hangup-btn">挂断</button>
+              <button type="button" id="accept-btn">接听</button>
+              <button type="button" id="reject-btn">拒绝</button>
+            </div>
+          <div class="line">
+            来电列表 <select id="callerList"></select>
+          </div>
+        </div>
+      </div>
+
+      <div id="tabs-devices">
+        <div class="part">
+          <div class="line">
+            摄像头列表 <select id="camera"></select>
+          </div>
+          <div class="line">
+            麦克风列表 <select id="micro"></select>
+          </div>
+          <div class="line">
+            麦克风：
+            <button id="playMicro" class="close">打开</button>
+            <button id="playMicroOff" class="close">关闭</button>
+            <label>
+              <input type="checkbox" id="AEC-enable" checked> 回声消除
+            </label>
+          </div>
+          <div class="line">
+            摄像头：
+            <button id="playCamera" class="close">打开</button>
+            <button id="playCameraOff" class="close">关闭</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="tabs-playwith">
+        <div class="part">
+          <div class="line">本端视频： 
+            宽度<input type="text" id="localWidth" class="input-40">
+            高度<input type="text" id="localHeight" class="input-40">
+            裁剪<input type="checkbox" checked id="localCrop" />
+            <button id="setLocal">设置</button>
+          </div>
+          <div class="line">远端视频：
+            宽度<input type="text" id="remoteWidth" class="input-40">
+            高度<input type="text" id="remoteHeight" class="input-40">
+            裁剪<input type="checkbox" checked id="remoteCrop" />
+            <button id="setRemote">设置</button>
+          </div>
+         
+          <div class="line">
+            控制本端还是对端:
+            <input type="radio" id="controlLocal" name="caller" checked> 本端
+            <input type="radio" id="controlRemote" name="caller"> 对端
+          </div>
+
+          <div class="line">
+            <span>播放声音：</span>
+            <button id="playSelfAudio" class="close">打开</button>
+            <button id="playSelfAudioOff" class="close">关闭</button>
+          </div>
+          <div class="line">
+            <span>开启画面：</span>
+            <button id="setLocalView" class="close">打开</button>
+            <button id="setLocalViewOff" class="close">关闭</button>
+          </div>
+          <div class="line">
+            播放画面：
+            <button id="playSelfVideo">播放</button>
+            <button id="pauseSelfVideo">暂停</button>
+          </div>
+          <div class="line">
+            <span>播放音量(0-255)：</span>
+            <input type="text" id="volumeInput">
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="bottom">
+      <div class="block3">
+        <p class="block-header">通知事件</p>
+        <button id="clear-btn">清空</button>
+        <div class="part">
+          <div id="debug-content" class="bottom-debug-content"></div>
+        </div>
+      </div>
+      <div class="block3">
+        <div id="container">
+          <h1>画面区域</h1>
+          <div id="local-container" class="video-container">
+          <h5>自己的画面</h5>
+          </div>
+          
+          <div id="remote-container" class="video-container">
+            <h5>其他人的画面</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="./lib/axios.min.js"></script>
+  <script src="./lib/qs.min.js"></script>
+  <script src="./lib/md5.js"></script>
+  <script src="./lib/jquery.min.js"></script>
+  <script src="./lib/parseQuery.js"></script>
+  <script src="./lib/vconsole.min.js"></script>
+  <script src="./lib/jquery-ui.js"></script>
+  <!--SDK-->
+  <script src="./nim/NIM_Web_WebRTC_v6.6.0_test.js"></script>
+  <script src="./nim/NIM_Web_SDK_v6.6.0_test.js"></script>
+  <script src="./lib/common.js"></script>
+  <script src="./lib/demo.js"></script>
+  <script>
+    jQuery("#tabs").tabs({
+      collapsible: true
+    });
+  </script>
+</body>
+
+</html>
