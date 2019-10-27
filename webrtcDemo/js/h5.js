@@ -1,6 +1,11 @@
 window.Netcall = window.WebRTC;
 window.NIM = window.SDK.NIM;
 NIM.use(WebRTC);
+var hrt = document.documentElement.clientHeight
+window.onload = function(){
+  document.getElementById(elementId: 'app').style.height = hrt + 'px'
+}
+
 
 console.warn('浏览器信息: ', window.navigator.userAgent)
 const WEBRTC_ENV = {
