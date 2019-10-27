@@ -1,0 +1,665 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, .g-page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: PingFangSC-Regular;
+}
+
+.m-body {
+  position: relative;
+  /*padding-top: 4.2rem;*/
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: #F3F4F6;
+  overflow: scroll;
+}
+
+
+/**
+*
+* 登录页面
+* 
+**/
+.login-title {
+  display: block;
+  width: 18%;
+  height: auto;
+  /* border: 1px solid red; */
+  text-align: center;
+  position: absolute;
+  left: 41%;
+  top: 15%;
+}
+.login-title img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.login-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+  height: 48px;
+  border-bottom: 1px solid #C6CBD4;
+  position: absolute;
+  left: 10%;
+  top: 40%;
+}
+
+.login-item + .login-item {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.login-item-text {
+  align-self: center;
+  margin-right: 20px;
+  font-size: 22px;
+  color: #020202;
+  text-align: left;
+  line-height: 16px;
+}
+
+.login-item-input {
+  border: none;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 70%;
+  height: 24px;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.login-submit-btn {
+  width: 50%;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #3387FF;
+  color: #fff;
+  border-radius: 6px;
+  height: 5%;
+  position: absolute;
+  left: 25%;
+  top: 61%;
+}
+
+
+
+/**
+*
+* 呼叫页面
+* 
+**/
+.call-item {
+  display: inline;
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 30%;
+}
+
+.call-item-text {
+  display: inline-block;
+  font-size: 1.em;
+  color: #020202;
+  padding-right: 0.5em;
+}
+
+
+.call-item-input {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 60%;
+  height: 2em;
+  font-size: 1em;
+  padding-left: 1em;
+}
+
+
+.call-audio-btn {
+  width: 50%;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #7ab338;
+  color: #fff;
+  border-radius: 6px;
+  height: 5%;
+  position: absolute;
+  left: 25%;
+  top: 50%;
+}
+
+.call-video-btn {
+  width: 50%;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #3387FF;
+  color: #fff;
+  border-radius: 0.3em;
+  height: 5%;
+  position: absolute;
+  left: 25%;
+  top: 60%;
+}
+
+.call-logout-btn {
+  width: 20%;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #1f9a0e;
+  color: #f1f1f1;
+  border-radius: 6px;
+  height: 3%;
+  position: absolute;
+  right: 3%;
+  top: 1%;
+}
+
+
+/**
+*
+* 呼叫中页面
+* 
+**/
+.calling-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: #F3F4F6;
+  overflow: scroll;
+}
+
+.preview {
+  display: block;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: fill;
+  position: absolute;
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  transition: opacity 1s;
+  width: 100%;
+}
+
+.audio-calling-item {
+  text-align: center;
+  width: 60%;
+  /* height: 10%; */
+  position: absolute;
+  left: 20%;
+  top: 45%;
+}
+
+.audio-calling-item-text {
+  font-size: 1.2em;
+  color: #000;
+}
+
+.video-calling-item {
+  text-align: center;
+  width: 60%;
+  position: absolute;
+  left: 20%;
+  top: 27%;
+}
+
+.video-calling-item-text {
+  font-size: 1.2em;
+  color: #FFF;
+}
+
+
+
+/**
+*
+* 通话中页面
+* 
+**/
+.called-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: #F3F4F6;
+  overflow: scroll;
+}
+
+.video-called-large-preview-item {
+}
+
+.large-video {
+  display: block;
+  height: 100%;347
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: fill;
+  position: absolute;
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  transition: opacity 1s;
+  width: 100%;
+}
+
+.video-called-small-preview-item {
+}
+
+.small-video {
+  /*border: 1px solid gray;*/
+  right: 0px;
+  /*height: 30%;*/
+  width: 20%;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 1s;
+  opacity: 1;
+}
+
+.duration-item {
+  position: absolute;
+  left: 40%;
+  top: 2%;
+}
+
+.duration-item-text {
+  font-size: 18px;
+  color: #FFF;
+  display: flex;
+  text-align: center;
+　 vertical-align: middle;
+  position: absolute;
+  left: 10%;
+}
+
+.network-item {
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  margin: 0 auto;
+  width: 150px;
+  height: 35px;
+  position: absolute;
+  left: 35%;
+  top: 8%;
+}
+
+.network-item-text {
+  font-size: 18px;
+  color: #FFF;
+  position: absolute;
+  /* left: 5%; */
+  bottom: 0px;
+}
+
+.network-item-icon1 {
+  width: 5px;
+  height: 8px;
+  background: #00AA00;
+  position: absolute;
+  left: 82px;
+  bottom: 4px;
+}
+
+.network-item-icon2 {
+  width: 5px;
+  height: 10px;
+  background: #00AA00;
+  position: absolute;
+  left: 88px;
+  bottom: 4px;
+}
+
+.network-item-icon3 {
+  width: 5px;
+  height: 16px;
+  background: #00AA00;
+  position: absolute;
+  left: 94px;
+  bottom: 4px;
+}
+
+.network-item-icon4 {
+  width: 5px;
+  height: 19px;
+  background: #00AA00;
+  position: absolute;
+  left: 100px;
+  bottom: 4px;
+}
+
+.network-item-icon5 {
+  width: 5px;
+  height: 25px;
+  background: #00AA00;
+  position: absolute;
+  left: 106px;
+  bottom: 4px;
+}
+
+.network-item-icon6 {
+  width: 5px;
+  height: 28px;
+  background: #00AA00;
+  position: absolute;
+  left: 112px;
+  bottom: 4px;
+}
+
+.call-duration-item {
+  text-align: center;
+  width: 40%;
+  height: 24px;
+  position: absolute;
+  left: 30%;
+  top: 60%;
+  background: #000;
+  border-radius: 8px;
+}
+
+.call-duration-item-text {
+  font-size: 18px;
+  color: #FFF;
+  vertical-align: middle;
+}
+
+.switch-camera-title {
+  width: 17%;
+  height: 63px;
+  background-color: rgba(00,00,00,0.45);
+  border-radius: 4px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  position: absolute;
+  left: 2.5%;
+  bottom: 2%;
+}
+.switch-camera-title img {
+  width: auto;
+  height: auto;
+}
+
+.on-of-camera-title {
+  width: 17%;
+  height: 63px;
+  background-color: rgba(00,00,00,0.45);
+  border-radius: 4px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  position: absolute;
+  left: 22%;
+  bottom: 2%;
+}
+.on-of-camera-titlee img {
+  width: auto;
+  height: auto;
+}
+
+.on-of-mic-title {
+  width: 17%;
+  height: 63px;
+  background-color: rgba(00,00,00,0.45);
+  border-radius: 4px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  position: absolute;
+  left: 41.5%;
+  bottom: 2%;
+}
+.on-of-mic-title img {
+  width: auto;
+  height: auto;
+}
+
+.loudspeaker-title {
+  width: 17%;
+  height: 63px;
+  background-color: rgba(00,00,00,0.45);
+  border-radius: 4px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  position: absolute;
+  left: 61%;
+  bottom: 2%;
+}
+.loudspeaker-title img {
+  max-width: 52px;
+  max-height: 52px;
+}
+
+.hangup-title {
+  width: 17%;
+  height: 63px;
+  background-color: rgba(00,00,00,0.45);
+  border-radius: 4px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  position: absolute;
+  left: 80.5%;
+  bottom: 2%;
+}
+.hangup-title img {
+  width: auto;
+  height: auto;
+}
+
+/**
+*
+* 来电页面
+* 
+**/
+.incoming-call-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: #F3F4F6;
+  overflow: scroll;
+}
+
+.incoming-item {
+  overflow: hidden;
+  background: #F3F4F6;
+  text-align: center;
+  width: 90%;
+  height: 24px;
+  position: absolute;
+  left: 5%;
+  top: 21%;
+}
+
+.incoming-item-text {
+  vertical-align: middle;
+}
+
+
+.incoming-ignore-btn {
+  width: 30%;
+  margin: 0 auto;
+  background-color: #F00;
+  color: #F3F4F6;
+  border-radius: 6px;
+  height: 5%;
+  position: absolute;
+  left: 10%;
+  bottom: 20%;
+}
+
+.incoming-answer-btn {
+  width: 30%;
+  margin: 0 auto;
+  background-color: #04BE02;
+  color: #F3F4F6;
+  border-radius: 6px;
+  height: 5%;
+  position: absolute;
+  right: 10%;
+  bottom: 20%;
+}
+
+
+@media screen and (min-width: 800px) {
+  .m-body .layer {
+    width: 670px;
+  }
+}
+.classxxx {
+  background: '#ccc'
+}
+
+
+/**
+*
+* flex布局，实现图片垂直水平居中
+*
+**/
+.ui-flex {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap
+}
+
+.ui-flex, .ui-flex *, .ui-flex :after, .ui-flex :before {
+  box-sizing: border-box
+}
+
+.ui-flex.justify-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center
+}
+.ui-flex.center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+
+
+/**
+*
+*  音量控制器
+*
+**/
+.slider {
+  position: absolute;
+  bottom: 38px;
+  /* border: 1px solid #f00; */
+  width: 30px;
+  height: 110px;
+  border-radius: 1px;
+  background-color: rgba(0, 166, 0, 0.55);
+  right: 26.5%;
+  bottom: 11%;
+  /* z-index: 3; */
+}
+
+.txt {
+  position: absolute;
+  font-size: 10px;
+  color: #fff;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 2px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.rangeslider {
+  position: absolute;
+  left: 14px;
+  bottom: 2px;
+  background: #4f5053;
+}
+
+.rangeslider--vertical {
+  width: 2px;
+  min-height: 80px;
+  max-height: 100%;
+}
+
+.rangeslider--vertical .rangeslider__fill {
+  bottom: 0;
+  width: 100%;
+}
+
+.rangeslider__fill {
+  background: #0b25ea;
+  position: absolute;
+}
+
+
+.rangeslider .rangeslider__fill {
+  display: block;
+  -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.rangeslider--vertical .rangeslider__handle {
+  left: -5px;
+  /* touch-action: pan-x; */
+  -ms-touch-action: pan-x;
+  position: absolute;
+  /* left: 14px; */
+  bottom: 6px;
+}
+
+.rangeslider__handle {
+  cursor:pointer;
+  background: white;
+  /* border: 1px solid #cc7657; */
+  cursor: pointer;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiP…Igd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g);
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(0, 0, 0, 0.1)));
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}

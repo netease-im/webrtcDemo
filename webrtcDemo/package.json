@@ -1,0 +1,24 @@
+{
+  "name": "h5Demo",
+  "description": "移动端浏览器使用网易云信音视频sdk.",
+  "version": "1.0.0",
+  "author": "The Netease Nrtc sdk authors",
+  "browser": "index-browser.js",
+  "devDependencies": {
+    "browserify": "2.22.0",
+    "vue": "^2.1.10"
+  },
+  "dependencies": {},
+  "keywords": [
+    "demo",
+    "WebRTC"
+  ],
+  "license": "ISC",
+   "scripts": {
+    "https-server": "http-server --ssl --key ./ssh/key.pem --cert ./ssh/cert.pem --p 8089"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/netease-im"
+  }
+}
