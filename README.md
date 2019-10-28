@@ -19,7 +19,7 @@ webrtcDemo是 云信实时音webrtc能力在移动端使用的相关实例demo�
 
 ## 部署
 - 执行 npm run install
-- 执行 npm https-server
+- 执行 npm run https-server
 - 访问 https://127.0.0.1:8089/ 即可
 
 ## 使用
