@@ -3,7 +3,7 @@ window.NIM = window.SDK.NIM;
 NIM.use(WebRTC);
 var hrt = document.documentElement.clientHeight
 window.onload = function(){
-  document.getElementById(elementId: 'app').style.height = hrt + 'px'
+  document.getElementById('app').style.height = hrt + 'px'
 }
 
 
